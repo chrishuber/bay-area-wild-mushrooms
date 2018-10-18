@@ -19,6 +19,10 @@ My main data source for the project is a MySQL database dump from Mushroom Obser
 In terms of feature engineering, I created an artifical half mile square location grid and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I manually looked up the edibility/poisonous/medicinal/etc. nature of each mushroom species as this information was not supplied in the dataset but is very important. In my research I also found that both edible and poisonous mushrooms exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides). I also created columns for the presence of Redwood, Coastal Oak, Douglass Fir forests as well as canyon environmental factors that are required for certain mushroom species to grow using the reported location of finds and investigation of forest compositions in places like regional parks.
 </p>
 
+<p>
+<img src="./images/mushroom_date_bar.png">
+</p>
+
 ### <span style="color:#AAA">Methods and Models</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p>I am using MySQL as a database backend and Python/Pandas as the main technologies to analyze and deliver my findings. For visualizations, I am using matplotlib and Tableau.</p>
