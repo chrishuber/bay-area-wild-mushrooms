@@ -12,6 +12,9 @@
 <p>
 My main data source for the project is a MySQL database dump from Mushroom Observer, a user-submitted mushroom documenting website. I seperated those records into seperate Bay Area relevant tables using SQL and wrote queries to extract the data sets I was looking for with my chosen filters. I have also sourced weather data for the submitted periods (May 2006 - September 2018) from the NOAA weeather website. 
 </p>
+
+<hr/>
+
 <p>
 In terms of feature engineering, I created an artifical half mile square location grid and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I manually looked up the edibility/poisonous/medicinal/etc. nature of each mushroom species as this information was not supplied in the dataset but is very important. In my research I also found that both edible and poisonous mushrooms exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides). I also created columns for the presence of Redwood, Coastal Oak, Douglass Fir forests as well as canyon environmental factors that are required for certain mushroom species to grow using the reported location of finds and investigation of forest compositions in places like regional parks.
 </p>
@@ -32,8 +35,6 @@ In terms of feature engineering, I created an artifical half mile square locatio
 <p>Limitations became more evident over time. I was unable to find data on very important factors like soil composition which could significantly increase my accuracy scores. There is also a sparsity of data given the time period I am analyzing for (20689 observations (2404 edible) over a 12 year period) which might be shored up if I could gain access to more detailed data.</p>
 </div>
 
-<hr/>
-
 ### <span style="color:#AAA">Statistical Analysis</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p><b>Implementation</b><br/>
@@ -42,6 +43,9 @@ I quickly realized that this was a classification problem. As such, I built pipe
 <p>
 <img src="./images/log_reg_cm.png">
 </p>
+
+<hr/>
+
 <p><b>Evaluation</b><br/>
 <p>
 My scores started out very low but gradually improved as I added new data and engineered features. I also soon realized that the goal I was trying to accomplish was extremely ambitious &mdash; over 30 different classes for about 2400 observations &mdash; and that the data I had was most likely inadequate for the task at hand. The observations I was using as data were not conducted in a scientific manner and as such would not benefit from things like time series analysis which is often useful in evaluating biological phenomena (because of gestation periods, etc.) However, I did notice my scores improving as I was able to add data which led me to believe that with substrate analysis for specific regions and more accurate reporting of other host vegetation I would be to make far more accurate predictions.
@@ -49,6 +53,8 @@ My scores started out very low but gradually improved as I added new data and en
 <p>
 Another reality is that mushroom growth, being a biological subject of analysis, is a messy thing to evaluate. There is very significant overlap in species growth and forest compositions are almost always mixed and changing (e.g. fir encroachment into coastal oak forests.) I realized at this point that the scope of this project was far greater than the allocated two to three week period but that with more time, data, and research could prove to be a very valuable tool.
 </p>
+
+<hr/>
 
 <p><b>Inference</b><br/>
 The fact that I was able to predict even ~17% of species at an exact level using over 30 classifiers is actually fairly amazing given the quality and amount of data I was able to harvest. Using a top-three species prediction using the probabilities reported by the modeling software, I was able to increase this to about 34%. These numbers should also be taken with a grain of salt given the unscientific nature of the gathered data and used more as a general guide than an exacting analysis tool.
