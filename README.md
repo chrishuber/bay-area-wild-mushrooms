@@ -39,8 +39,9 @@ In terms of feature engineering, I created an artifical half mile square locatio
 <p><b>Implementation</b><br/>
 I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression and SVC using PCA with SVC delivering the highest scores. I attribute this to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
 </p>
-
-
+<p>
+<img src="./images/log_reg_cm.png">
+</p>
 <p><b>Evaluation</b><br/>
 <p>
 My scores started out very low but gradually improved as I added new data and engineered features. I also soon realized that the goal I was trying to accomplish was extremely ambitious &mdash; over 30 different classes for about 2400 observations &mdash; and that the data I had was most likely inadequate for the task at hand. The observations I was using as data were not conducted in a scientific manner and as such would not benefit from things like time series analysis which is often useful in evaluating biological phenomena (because of gestation periods, etc.) However, I did notice my scores improving as I was able to add data which led me to believe that with substrate analysis for specific regions and more accurate reporting of other host vegetation I would be to make far more accurate predictions.
