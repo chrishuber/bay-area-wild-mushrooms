@@ -45,7 +45,7 @@ In terms of feature engineering, I created an artifical half mile square locatio
 I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression and SVC using PCA with SVC delivering the highest scores. I attribute this to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
 </p>
 <p>
-<img src="./images/log_reg_cm.png">
+<img src="./images/svc_pca_cm.png">
 </p>
 
 <hr/>
