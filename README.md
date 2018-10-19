@@ -1,6 +1,6 @@
-## <span style="color:#AAA">Technical Summary</span>
+### <span style="color:#AAA">Technical Summary</span>
 <p>
-<span style="color:#CCC">A predictive study of edible wild mushroom growth in the greater San Francisco Bay Area</span><br/>
+<span style="color:#CCC; font-weight:bold;">A classification study of edible wild mushrooms in the greater San Francisco Bay Area</span><br/>
 <span style="color:#BBB">Chris Huber, chrishubersf@gmail.com</span>
 </p>
 
