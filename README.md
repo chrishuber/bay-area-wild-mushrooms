@@ -1,4 +1,4 @@
-## <span style="color:#AAA">Executive Summary</span>
+## <span style="color:#AAA">Technical Summary</span>
 ### <span style="color:#BBB">Chris Huber, chrishubersf@gmail.com</span>
 #### <span style="color:#CCC">A predictive study of edible wild mushroom growth in the greater San Francisco Bay Area</span>
 
@@ -13,10 +13,18 @@
 My main data source for the project is a MySQL database dump from Mushroom Observer, a user-submitted mushroom documenting website. I seperated those records into seperate Bay Area relevant tables using SQL and wrote queries to extract the data sets I was looking for with my chosen filters. I have also sourced weather data for the submitted periods (May 2006 - September 2018) from the NOAA weeather website. 
 </p>
 
+<p>
+<img src="./images/schema.png">
+</p>
+
+<p>
+I also did a lot of manual looking up of the properties of the mushrooms listed (e.g. edible, poisonous, psychoactive) using Wikipedia, blog posts, and articles published by Bay Area news organizations seeing as that information was not recorded as part of the original dataset. Although time consuming, this research helped me gain some expertise and insight into the field of mycology and the unique habitats and flora specific to the Bay Area.
+</p>
+
 <hr/>
 
 <p>
-In terms of feature engineering, I created an artifical half mile square location grid and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I manually looked up the edibility/poisonous/medicinal/etc. nature of each mushroom species as this information was not supplied in the dataset but is very important. In my research I also found that both edible and poisonous mushrooms exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides). I also created columns for the presence of Redwood, Coastal Oak, Douglass Fir forests as well as canyon environmental factors that are required for certain mushroom species to grow using the reported location of finds and investigation of forest compositions in places like regional parks.
+In terms of feature engineering, I created an artifical half mile square location grid and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I manually looked up the edibility/poisonous/medicinal/etc. nature of each mushroom species as this information was not supplied in the dataset but is very important. In my research I also found that both edible and poisonous mushrooms exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides). I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow using the reported location of finds and investigation of forest compositions in places like regional parks.
 </p>
 
 <p>
@@ -45,8 +53,15 @@ In terms of feature engineering, I created an artifical half mile square locatio
 ### <span style="color:#AAA">Statistical Analysis</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p><b>Implementation</b><br/>
-I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression and SVC using PCA with SVC delivering the highest scores. I attribute this to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
+I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression without PCA and SVC using PCA. Logistic Regression in a mainstay in classification and predictive modeling while I attribute the success of SVC to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
 </p>
+
+<p>
+<img src="./images/pipeline.png">
+</p>
+
+<p>I then took my top performing models and using the best_estimator_ property of the Pipeline object as a guideline, broke out individual models to test and adjust the hyperparameters on individually since doing an exhaustive analysis of large numbers of parameters with a pipeline is prohibitive both in time and CPU capacity. Doing so resulted in me achieving slightly higher scores for some of my models.</p>
+
 <p>
 <img src="./images/svc_pca_cm.png">
 </p>
