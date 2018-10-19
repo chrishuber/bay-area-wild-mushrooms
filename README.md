@@ -30,7 +30,7 @@ I did a lot of manual looking up of the properties of the mushrooms listed (e.g.
 <hr/>
 
 <p>
-In terms of feature engineering, I created an artifical location grid composed of squares 1/4 mile width and length over the observed region and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. In my research I found that both edible and poisonous mushrooms frequently exist within the same genus (e.g. <a href="https://en.wikipedia.org/wiki/Blusher" target="_blank"<i>Aminita</i> Novinupta</a> vs. <a href="https://en.wikipedia.org/wiki/Amanita_phalloides" target="_blank"><i>Aminita</i> phalloides</a>) and the same environmental conditions. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
+In terms of feature engineering, I created an artifical location grid composed of squares 1/4 mile width and length over the observed region and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. In my research I found that both edible and poisonous mushrooms frequently exist within the same genus (e.g. <a href="https://en.wikipedia.org/wiki/Blusher" target="_blank"><i>Aminita</i> Novinupta</a> vs. <a href="https://en.wikipedia.org/wiki/Amanita_phalloides" target="_blank"><i>Aminita</i> phalloides</a>) and the same environmental conditions. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
 </p>
 
 <p>
@@ -46,19 +46,25 @@ In terms of feature engineering, I created an artifical location grid composed o
 <p>I used Selenium to create an automation script which simulated clicks on the NOAA (National Ocanic and Atmospheric) website in order to scrape weather data for a number of different weather stations. This also required subsequent EDA to account for missing values.</p>
 
 <p align="center">
-<img src="./images/weather_by_cluster.png">
+	<img src="./images/weather_by_cluster.png">
+</p>
+<p>
 <i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/BayAreaEdibleMushrooms/WeatherConditionsByCluster?publish=yes" target="_blank">interactive version</a></i>
 </p>
 
 <p>I used the KMeans unsupervised classification algorithm to cluster data which while proving ineffective for classification was useful in assigning weather values. This was significant due to the microclimates that exist in the Bay Area creating conditions where temperature and precipitation can vary greatly over short distances, from San Francisco to Berkeley for example.
-<p><img src="./images/mush_cluster_map.png"></p>
+<p align="center">
+	<img src="./images/mush_cluster_map.png">
+</p>
+<p>
 <i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/BayAreaEdibleMushroomsByName/EdibleMushroomsbyName" target="_blank">interactive version</a></i>
+</p>
 </div>
 
 
 ### <span style="color:#AAA">Problematic Factors</span>
 <div style="margin-left: 30px; margin-right: 30px;">
-<p>One of the issues with this dataset was that it did not record quantity, simply occurrences. This means that while the mushrooms of the same species typically grow in a given area, there is no record of the amount. Thus, this should not be seen as a guide to finding any particular amount of a given mushroom but rather its existence in an area.</p>
+<p>One of the issues with this dataset was that it did not record quantity, simply occurrences. This means that while mushrooms of the same species typically grow in numbers in a given area, there is no record of the amount. Thus, this should not be seen as a guide to finding any particular amount of a given mushroom but rather its existence in an area.</p>
 
 <p>I was unable to find data on very important factors like soil composition which could significantly increase my accuracy scores. There is also a sparsity of data given the time period I am analyzing for (20689 observations (2404 edible) over a 12 year period) which might be shored up if I could gain access to additional and more detailed data.</p>
 </div>
