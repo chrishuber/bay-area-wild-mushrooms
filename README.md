@@ -8,27 +8,29 @@
 
 ### <span style="color:#AAA">Problem Statement and Goal</span>
 <div style="margin-left: 30px; margin-right: 30px;">
-<p>Given prior records of findings of edible wild edible mushroom species with latitude/longitude coordinates, species names, dates of sightings, weather conditions, and forest compositions can I predict for a given time period and location which species of edible mushroom it is among those that grow natively in the Bay Area?</p>
+<p>Given prior records of findings of edible wild edible mushroom species with latitude/longitude coordinates, species names, dates of sightings, weather conditions, and forest compositions can I predict for a given time period and location which species of edible mushroom an instance is likely to be among those that grow natively in the Bay Area?</p>
 </div>
 
 ### <span style="color:#AAA">Data Sources</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p>
-My main data source for the project is a MySQL database dump from Mushroom Observer, a user-submitted mushroom documenting website. I seperated those records into seperate Bay Area relevant tables using SQL and wrote queries to extract the data sets I was looking for with my chosen filters. I have also sourced weather data for the submitted periods (May 2006 - September 2018) from the NOAA weeather website. 
+My main data source for the project is a MySQL database dump from Mushroom Observer, a user-submitted mushroom documenting website. I filtered those records into Bay Area relevant tables using SQL and wrote queries to extract the data sets I was looking for based on custom criteria. I also sourced weather data for the submitted periods (May 2006 - September 2018) from the NOAA weather website using Selenium. 
 </p>
 
 <p>
 <img src="./images/schema.png">
 </p>
 
+<hr/>
+
 <p>
-I also did a lot of manual looking up of the properties of the mushrooms listed (e.g. edible, poisonous, psychoactive) using Wikipedia, blog posts, and articles published by Bay Area news organizations seeing as that information was not recorded as part of the original dataset. Although time consuming, this research helped me gain some expertise and insight into the field of mycology and the unique habitats and flora specific to the Bay Area.
+I did a lot of manual looking up of the properties of the mushrooms listed (e.g. edible, poisonous, psychoactive) using Wikipedia, blog posts, and articles published by Bay Area news organizations seeing as that information was not recorded as part of the original dataset. Although time consuming, this research helped me gain some expertise and insight into the field of mycology and the unique habitats and flora specific to the Bay Area.
 </p>
 
 <hr/>
 
 <p>
-In terms of feature engineering, I created an artifical half mile square location grid and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I manually looked up the edibility/poisonous/medicinal/etc. nature of each mushroom species as this information was not supplied in the dataset but is very important. In my research I also found that both edible and poisonous mushrooms exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides). I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
+In terms of feature engineering, I created an artifical half mile square location grid over the observed region and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. In my research I found that both edible and poisonous mushrooms frequently exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides) and the same environmental conditions. The <a href="https://en.wikipedia.org/wiki/Amanita_phalloides" target="_blank">death cap</a> in particular is commonly found in the studied area. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
 </p>
 
 <p>
@@ -41,27 +43,29 @@ In terms of feature engineering, I created an artifical half mile square locatio
 
 <p>Sourcing the data was tricky: the records I was able to find were often partial and the data subject to user error. However, the source is reputable, curated, and well-known one among mycologists and as such I was be able to detect improperly formatted or submitted data with some thorough EDA.</p>
 
-<p>I used Selenium to create an automation script which simulated clicks on the NOAA (National Ocanic and Atmospheric) website in order to scrape weather data for a number of different weather stations. This also required EDA to account for missing values.</p>
+<p>I used Selenium to create an automation script which simulated clicks on the NOAA (National Ocanic and Atmospheric) website in order to scrape weather data for a number of different weather stations. This also required subsequent EDA to account for missing values.</p>
 
 <p align="center">
 <img src="./images/weather_by_cluster.png">
+<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/BayAreaEdibleMushrooms/WeatherConditionsByCluster?publish=yes" target="_blank">interactive version</a></i>
 </p>
 
-<p>I used KMeans to cluster data which while proving ineffective for classification was useful in assigning weather values. This was significant due to the microclimates that exist in the Bay Area creating conditions where temperature and precipitation can vary greatly over short distances, from San Francisco to Berkeley for example.
+<p>I used the KMeans unsupervised classification algorithm to cluster data which while proving ineffective for classification was useful in assigning weather values. This was significant due to the microclimates that exist in the Bay Area creating conditions where temperature and precipitation can vary greatly over short distances, from San Francisco to Berkeley for example.
 <p><img src="./images/mush_cluster_map.png"></p>
+<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/BayAreaEdibleMushroomsByName/EdibleMushroomsbyName" target="_blank">interactive version</a></i>
 </div>
 
 
-### <span style="color:#AAA">Risks, Assumptions, and Limitations</span>
+### <span style="color:#AAA">Problematic Factors</span>
 <div style="margin-left: 30px; margin-right: 30px;">
-<p>One of the risks of this dataset was that it does not record quantity, simply occurrences. This means that while the mushrooms of the same species typically grow in a given area, there is no record of the amount. Thus, this should not be seen as a guide to finding any particular amount of a given mushroom but rather its existence in an area.</p>
+<p>One of the issues with this dataset was that it did not record quantity, simply occurrences. This means that while the mushrooms of the same species typically grow in a given area, there is no record of the amount. Thus, this should not be seen as a guide to finding any particular amount of a given mushroom but rather its existence in an area.</p>
 
-<p>Limitations became more evident over time. I was unable to find data on very important factors like soil composition which could significantly increase my accuracy scores. There is also a sparsity of data given the time period I am analyzing for (20689 observations (2404 edible) over a 12 year period) which might be shored up if I could gain access to additional and more detailed data.</p>
+<p>I was unable to find data on very important factors like soil composition which could significantly increase my accuracy scores. There is also a sparsity of data given the time period I am analyzing for (20689 observations (2404 edible) over a 12 year period) which might be shored up if I could gain access to additional and more detailed data.</p>
 </div>
 
 ### <span style="color:#AAA">Statistical Analysis</span>
 <div style="margin-left: 30px; margin-right: 30px;">
-<p><b>Implementation</b><br/>
+<p><b>Model Selection</b><br/>
 I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression without PCA and SVC using PCA. Logistic Regression is a mainstay in classification and predictive modeling while I attribute the success of SVC to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
 </p>
 
