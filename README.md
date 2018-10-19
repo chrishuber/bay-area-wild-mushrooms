@@ -39,7 +39,7 @@ In terms of feature engineering, I created an artifical half mile square locatio
 
 <p>I used Selenium to create an automation script which simulated clicks on the NOAA (National Ocanic and Atmospheric) website in order to scrape weather data for a number of different weather stations. This also required EDA to account for missing values.</p>
 
-<p>
+<p align="center">
 <img src="./images/weather_by_cluster.png">
 </p>
 
