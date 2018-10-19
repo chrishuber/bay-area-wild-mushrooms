@@ -24,7 +24,7 @@ I also did a lot of manual looking up of the properties of the mushrooms listed 
 <hr/>
 
 <p>
-In terms of feature engineering, I created an artifical half mile square location grid and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I manually looked up the edibility/poisonous/medicinal/etc. nature of each mushroom species as this information was not supplied in the dataset but is very important. In my research I also found that both edible and poisonous mushrooms exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides). I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow using the reported location of finds and investigation of forest compositions in places like regional parks.
+In terms of feature engineering, I created an artifical half mile square location grid and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I manually looked up the edibility/poisonous/medicinal/etc. nature of each mushroom species as this information was not supplied in the dataset but is very important. In my research I also found that both edible and poisonous mushrooms exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides). I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
 </p>
 
 <p>
@@ -50,8 +50,9 @@ In terms of feature engineering, I created an artifical half mile square locatio
 
 ### <span style="color:#AAA">Risks, Assumptions, and Limitations</span>
 <div style="margin-left: 30px; margin-right: 30px;">
-<p>One of the major risks of this dataset is that it does not record quantity, simply occurrences. This means that while the mushrooms of the same species typically grow in a given area, there is no record of the amount. Thus, this should not be seen as a guide to finding any particular amount of a given mushroom but rather its existence in an area.</p>
-<p>Limitations became more evident over time. I was unable to find data on very important factors like soil composition which could significantly increase my accuracy scores. There is also a sparsity of data given the time period I am analyzing for (20689 observations (2404 edible) over a 12 year period) which might be shored up if I could gain access to more detailed data.</p>
+<p>One of the risks of this dataset was that it does not record quantity, simply occurrences. This means that while the mushrooms of the same species typically grow in a given area, there is no record of the amount. Thus, this should not be seen as a guide to finding any particular amount of a given mushroom but rather its existence in an area.</p>
+
+<p>Limitations became more evident over time. I was unable to find data on very important factors like soil composition which could significantly increase my accuracy scores. There is also a sparsity of data given the time period I am analyzing for (20689 observations (2404 edible) over a 12 year period) which might be shored up if I could gain access to additional and more detailed data.</p>
 </div>
 
 ### <span style="color:#AAA">Statistical Analysis</span>
@@ -74,7 +75,7 @@ I quickly realized that this was a classification problem. As such, I built pipe
 
 <p><b>Evaluation</b><br/>
 <p>
-My scores started out very low but gradually improved as I added new data and engineered features. I also soon realized that the goal I was trying to accomplish was extremely ambitious &mdash; over 30 different classes for about 2400 observations &mdash; and that the data I had was most likely inadequate for the task at hand. The observations I was using as data were not conducted in a scientific manner and as such would not benefit from things like time series analysis which is often useful in evaluating biological phenomena (because of gestation periods, etc.) However, I did notice my scores improving as I was able to add data which led me to believe that with substrate analysis for specific regions and more accurate reporting of other host vegetation I would be to make far more accurate predictions.
+My scores started out very low but gradually improved as I added new data and engineered features. I also soon realized that the goal I was trying to accomplish was extremely ambitious &mdash; 32 different classes for about 2400 observations &mdash; and that the data I had was most likely inadequate for the task at hand. The observations I was using as data were not conducted in a scientific manner and as such would not benefit from things like time series analysis which is often useful in evaluating biological phenomena (because of gestation periods, etc.) However, I did notice my scores improving as I was able to add data which led me to believe that with substrate analysis for specific regions and more accurate reporting of other host vegetation I would be to make more accurate predictions.
 </p>
 <p>
 Another reality is that mushroom growth, being a biological subject of analysis, is a messy thing to evaluate. There is very significant overlap in species growth and forest compositions are almost always mixed and changing (e.g. fir encroachment into coastal oak forests.) Mushroom identification also relies in large part on factors like stem length, coloration, etc. that were not in a useable format in the data i sourced. I realized at this point that the scope of this project was far greater than the allocated two to three week period but that with more time, data, and research could prove to be a very valuable tool.
@@ -83,7 +84,7 @@ Another reality is that mushroom growth, being a biological subject of analysis,
 <hr/>
 
 <p><b>Inference</b><br/>
-The fact that I was able to predict even ~17% of species at an exact level using over 30 classifiers is actually fairly amazing given the quality and amount of data I was able to harvest. Using a top-three species prediction using the probabilities reported by the modeling software, I was able to increase this to about 34%. These numbers should also be taken with a grain of salt given the unscientific nature of the gathered data and used more as a general guide than an exacting analysis tool.
+The fact that I was able to predict even 18.5% of species at an exact level using 32 classifiers is actually fairly amazing given the quality and amount of data I was able to harvest. Using a top-three species prediction using the probabilities reported by the modeling software, I was able to increase this to just under 40%. These numbers in a practical sense would be used as a general guide rather than an exacting analysis tool. However, I could also expand my classifications to include poisionous, medicinial, and psychoactive types and join them with images to provide something like a data-science driven field guide.
 </p>
 </div>
 
@@ -94,11 +95,11 @@ I see a lot of potential in growing this project into a phone-based app of some 
 </p>
 
 <p>
-In terms of modeling, the more work I did on this, the more it started pointing me in the direction of Neural Nets. The fact that there are built-in features to do things like recognize the content of adjoining cells in a grid with Neural Nets made me think that future investigation in this direction might yield higher accuracies.
+In terms of modeling, the more work I did on this, the more it started pointing me in the direction of Neural Nets. The fact that there are built-in Neural Net features to do things like recognize the content of adjoining cells in a grid and its ability to learn from misclassifications made me think that future investigation in this direction is warranted.
 </p>
 
 <p>
-In the meantime, I feel like a lot more work can be done in terms of sourcing additional data for things like substrate. There is also a lot of missing data that could be filled in with a more in-depth reworking of the existing data in the database. This project is hungry for all the data it can get: by pulling existing data like coloration, gills, stem and cap size, and other empirical features that are currently scattered across many different tables and columns a much more specific approach could be used. I am very interested to see what impact additional data will have in the accuracy scores.
+In the meantime, a lot more work can be done to source additional data. There is also a lot of missing data for existing rows in my dataset that could be filled in with a more in-depth reworking of the existing data I have. This project is hungry for all the data it can get: by pulling factors like coloration, gills, stem and cap size, and other empirical features that are currently scattered across many different tables and columns a much more specific approach could be used.
 </p>
 </div>
 
