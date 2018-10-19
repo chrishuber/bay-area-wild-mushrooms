@@ -34,13 +34,17 @@ In terms of feature engineering, I created an artifical half mile square locatio
 ### <span style="color:#AAA">Methods and Models</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p>I am using MySQL as a database backend and Python/Pandas as the main technologies to analyze and deliver my findings. For visualizations, I am using matplotlib and Tableau.</p>
+
 <p>Sourcing the data was tricky: the records I was able to find were often partial and the data subject to user error. However, the source is reputable, curated, and well-known one among mycologists and as such I was be able to detect improperly formatted or submitted data with some thorough EDA.</p>
+
 <p>I used Selenium to create an automation script which simulated clicks on the NOAA (National Ocanic and Atmospheric) website in order to scrape weather data for a number of different weather stations. This also required EDA to account for missing values.</p>
+
 <p>
 <img src="./images/weather_by_cluster.png">
 </p>
+
 <p>I used KMeans to cluster data which while proving ineffective for classification was useful in assigning weather values. This was significant due to the microclimates that exist in the Bay Area creating conditions where temperature and precipitation can vary greatly over short distances, from San Francisco to Berkeley for example.
-<p><img src="./images/mush_cluster_map.png">
+<p><img src="./images/mush_cluster_map.png"></p>
 </div>
 
 
@@ -73,7 +77,7 @@ I quickly realized that this was a classification problem. As such, I built pipe
 My scores started out very low but gradually improved as I added new data and engineered features. I also soon realized that the goal I was trying to accomplish was extremely ambitious &mdash; over 30 different classes for about 2400 observations &mdash; and that the data I had was most likely inadequate for the task at hand. The observations I was using as data were not conducted in a scientific manner and as such would not benefit from things like time series analysis which is often useful in evaluating biological phenomena (because of gestation periods, etc.) However, I did notice my scores improving as I was able to add data which led me to believe that with substrate analysis for specific regions and more accurate reporting of other host vegetation I would be to make far more accurate predictions.
 </p>
 <p>
-Another reality is that mushroom growth, being a biological subject of analysis, is a messy thing to evaluate. There is very significant overlap in species growth and forest compositions are almost always mixed and changing (e.g. fir encroachment into coastal oak forests.) I realized at this point that the scope of this project was far greater than the allocated two to three week period but that with more time, data, and research could prove to be a very valuable tool.
+Another reality is that mushroom growth, being a biological subject of analysis, is a messy thing to evaluate. There is very significant overlap in species growth and forest compositions are almost always mixed and changing (e.g. fir encroachment into coastal oak forests.) Mushroom identification also relies in large part on factors like stem length, coloration, etc. that were not in a useable format in the data i sourced. I realized at this point that the scope of this project was far greater than the allocated two to three week period but that with more time, data, and research could prove to be a very valuable tool.
 </p>
 
 <hr/>
@@ -82,3 +86,20 @@ Another reality is that mushroom growth, being a biological subject of analysis,
 The fact that I was able to predict even ~17% of species at an exact level using over 30 classifiers is actually fairly amazing given the quality and amount of data I was able to harvest. Using a top-three species prediction using the probabilities reported by the modeling software, I was able to increase this to about 34%. These numbers should also be taken with a grain of salt given the unscientific nature of the gathered data and used more as a general guide than an exacting analysis tool.
 </p>
 </div>
+
+### <span style="color:#AAA">Future Steps</span>
+<div style="margin-left: 30px; margin-right: 30px;">
+<p>
+I see a lot of potential in growing this project into a phone-based app of some sort. I envision a user finding a mushroom and using geolocation and date features along with user-supplied mushroom features like gills, latex, stalk and cap features, coloration, and terrain to both submit a new sighting record and receive feedback on the likelihood of it being a certain type of mushroom. With the built-in GPS and photo capabilities of phones, this could provide an easy way to significantly grow the existing database as well as provide interesting and useful feedback to the user. There would be a fun factor too for people looking to test their knowledge of mushroom species and getting immediate feedback based on similar reported sighting pulled from a large database.
+</p>
+
+<p>
+In terms of modeling, the more work I did on this, the more it started pointing me in the direction of Neural Nets. The fact that there are built-in features to do things like recognize the content of adjoining cells in a grid with Neural Nets made me think that future investigation in this direction might yield higher accuracies.
+</p>
+
+<p>
+In the meantime, I feel like a lot more work can be done in terms of sourcing additional data for things like substrate. There is also a lot of missing data that could be filled in with a more in-depth reworking of the existing data in the database. This project is hungry for all the data it can get: by pulling existing data like coloration, gills, stem and cap size, and other empirical features that are currently scattered across many different tables and columns a much more specific approach could be used. I am very interested to see what impact additional data will have in the accuracy scores.
+</p>
+</div>
+
+
