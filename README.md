@@ -1,6 +1,10 @@
 ## <span style="color:#AAA">Technical Summary</span>
-### <span style="color:#BBB">Chris Huber, chrishubersf@gmail.com</span>
-#### <span style="color:#CCC">A predictive study of edible wild mushroom growth in the greater San Francisco Bay Area</span>
+<p>
+<span style="color:#CCC">A predictive study of edible wild mushroom growth in the greater San Francisco Bay Area</span><br/>
+<span style="color:#BBB">Chris Huber, chrishubersf@gmail.com</span>
+</p>
+
+<hr/>
 
 ### <span style="color:#AAA">Problem Statement and Goal</span>
 <div style="margin-left: 30px; margin-right: 30px;">
@@ -58,7 +62,7 @@ In terms of feature engineering, I created an artifical half mile square locatio
 ### <span style="color:#AAA">Statistical Analysis</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p><b>Implementation</b><br/>
-I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression without PCA and SVC using PCA. Logistic Regression in a mainstay in classification and predictive modeling while I attribute the success of SVC to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
+I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression without PCA and SVC using PCA. Logistic Regression is a mainstay in classification and predictive modeling while I attribute the success of SVC to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
 </p>
 
 <p>
