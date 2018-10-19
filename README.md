@@ -1,6 +1,6 @@
-### <span style="color:#AAA">Technical Summary</span>
+## <span style="color:#AAA">Technical Report</span>
 <p>
-<span style="color:#CCC;"><b>A classification study of edible wild mushrooms in the greater San Francisco Bay Area</b></span><br/>
+<span style="color:#CCC;"><b>A predictive classification study of edible wild mushrooms in the greater San Francisco Bay Area</b></span><br/>
 <span style="color:#BBB">Chris Huber, chrishubersf@gmail.com</span>
 </p>
 
@@ -30,7 +30,7 @@ I did a lot of manual looking up of the properties of the mushrooms listed (e.g.
 <hr/>
 
 <p>
-In terms of feature engineering, I created an artifical half mile square location grid over the observed region and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. In my research I found that both edible and poisonous mushrooms frequently exist within the same genus (e.g. <i>Aminita</i> Novinupta vs. <i>Aminita</i> phalloides) and the same environmental conditions. The <a href="https://en.wikipedia.org/wiki/Amanita_phalloides" target="_blank">death cap</a> in particular is commonly found in the studied area. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
+In terms of feature engineering, I created an artifical location grid composed of squares 1/4 mile width and length over the observed region and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. In my research I found that both edible and poisonous mushrooms frequently exist within the same genus (e.g. <a href="https://en.wikipedia.org/wiki/Blusher" target="_blank"<i>Aminita</i> Novinupta</a> vs. <a href="https://en.wikipedia.org/wiki/Amanita_phalloides" target="_blank"><i>Aminita</i> phalloides</a>) and the same environmental conditions. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
 </p>
 
 <p>
@@ -39,7 +39,7 @@ In terms of feature engineering, I created an artifical half mile square locatio
 
 ### <span style="color:#AAA">Methods and Models</span>
 <div style="margin-left: 30px; margin-right: 30px;">
-<p>I am using MySQL as a database backend and Python/Pandas as the main technologies to analyze and deliver my findings. For visualizations, I am using matplotlib and Tableau.</p>
+<p>I am using MySQL as a database backend and Python/Pandas as the main technologies to analyze and deliver my findings. For visualizations, I am using Matplotlib, Seaborn, and Tableau.</p>
 
 <p>Sourcing the data was tricky: the records I was able to find were often partial and the data subject to user error. However, the source is reputable, curated, and well-known one among mycologists and as such I was be able to detect improperly formatted or submitted data with some thorough EDA.</p>
 
