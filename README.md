@@ -33,7 +33,7 @@ I did a lot of manual looking up of the properties of the mushrooms listed (e.g.
 In terms of feature engineering, I created an artifical location grid composed of squares 1/4 mile width and length over the observed region and assigned a code to each grid cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. In my research I found that both edible and poisonous mushrooms frequently exist within the same genus (e.g. <a href="https://en.wikipedia.org/wiki/Blusher" target="_blank"><i>Aminita</i> Novinupta</a> vs. <a href="https://en.wikipedia.org/wiki/Amanita_phalloides" target="_blank"><i>Aminita</i> phalloides</a>) and the same environmental conditions. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
 </p>
 
-<p>
+<p align="center">
 	<img src="./images/mushroom_date_bar.png">
 </p>
 
@@ -49,7 +49,7 @@ In terms of feature engineering, I created an artifical location grid composed o
 	<img src="./images/weather_by_cluster.png">
 </p>
 <p>
-<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/EdibleMushroomsByCluster/EdibleMushroomsByCluster?publish=yes" target="_blank">interactive version</a></i>
+<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/BayAreaEdibleMushrooms/WeatherConditionsByCluster?publish=yes" target="_blank">interactive version</a></i>
 </p>
 
 <p>I used the KMeans unsupervised classification algorithm to cluster data which while proving ineffective for classification was useful in assigning weather values. This was significant due to the microclimates that exist in the Bay Area creating conditions where temperature and precipitation can vary greatly over short distances, from San Francisco to Berkeley for example.
@@ -57,7 +57,7 @@ In terms of feature engineering, I created an artifical location grid composed o
 	<img src="./images/mush_cluster_map.png">
 </p>
 <p>
-<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/BayAreaEdibleMushroomsByName/EdibleMushroomsbyName" target="_blank">interactive version</a></i>
+<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/EdibleMushroomsByCluster/EdibleMushroomsByCluster?publish=yes" target="_blank">interactive version</a></i>
 </p>
 </div>
 
@@ -75,13 +75,13 @@ In terms of feature engineering, I created an artifical location grid composed o
 I quickly realized that this was a classification problem. As such, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing models were Logistic Regression without PCA and SVC using PCA. Logistic Regression is a mainstay in classification and predictive modeling while I attribute the success of SVC to the dimensionality splitting capabilities of the RBF kernel which can analyze data in three or more dimensions.
 </p>
 
-<p>
+<p align="center">
 <img src="./images/pipeline.png">
 </p>
 
 <p>I then took my top performing models and using the best_estimator_ property of the Pipeline object as a guideline, broke out individual models to test and adjust the hyperparameters on individually since doing an exhaustive analysis of large numbers of parameters with a pipeline is prohibitive both in time and CPU capacity. Doing so resulted in me achieving slightly higher scores for some of my models.</p>
 
-<p>
+<p align="center">
 <img src="./images/svc_pca_cm.png">
 </p>
 
