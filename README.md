@@ -34,7 +34,7 @@ In terms of feature engineering, I created an artifical location grid composed o
 </p>
 
 <p>
-<img src="./images/mushroom_date_bar.png">
+	<img src="./images/mushroom_date_bar.png">
 </p>
 
 ### <span style="color:#AAA">Methods and Models</span>
@@ -49,7 +49,7 @@ In terms of feature engineering, I created an artifical location grid composed o
 	<img src="./images/weather_by_cluster.png">
 </p>
 <p>
-<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/BayAreaEdibleMushrooms/WeatherConditionsByCluster?publish=yes" target="_blank">interactive version</a></i>
+<i><a href="https://public.tableau.com/profile/chris.huber#!/vizhome/EdibleMushroomsByCluster/EdibleMushroomsByCluster?publish=yes" target="_blank">interactive version</a></i>
 </p>
 
 <p>I used the KMeans unsupervised classification algorithm to cluster data which while proving ineffective for classification was useful in assigning weather values. This was significant due to the microclimates that exist in the Bay Area creating conditions where temperature and precipitation can vary greatly over short distances, from San Francisco to Berkeley for example.
