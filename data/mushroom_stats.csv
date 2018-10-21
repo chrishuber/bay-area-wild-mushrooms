@@ -1,0 +1,58 @@
+id,species,stipe_min_length_cm,stipe_max_length_cm,stipe_min_width_cm,stipe_max_width_cm,stipe_color,stipe_shape,stipe_scales,lamellae_morph,lamellae_color,pileus_min_width_cm,pileus_max_width_cm,pileus_shape,pileus_color,pileus_viscid,pileus_scales,pileus_warts,pileus_bruising
+1,Agaricus augustus,10,37,3,6,"yellow, brown",equal,1,close,"milk, brown, black",6,32,cap,"yellow, brown",0,1,0,1
+2,Agaricus subrutilescens,6,16,1,2,"white, brown",annulus,1,free,"pink, brown",6,14,cap,"purple, brown, green",0,1,0,1
+3,Amanita augusta,5,15,1,2,"white, milky",clavate,1,adnexed,"white, yellow",4,12,cap,"buff, brown",0,0,1,0
+4,Amanita calyptroderma,10,20,1.5,4,"white, yellow",annulus,0,adnexed,"white, milk",8,25,cap,"white, yellow, orange, buff, brown",1,0,0,0
+5,Amanita novinupta,6,12,1.5,3.5,white,annulus,1,adnexed,"white, milk",5,14,cap,pink,0,0,1,1
+6,Boletus edulis,7,20,3,8,"white, brown",equal,0,hymenophore,none,7,25,cap,"buff, yellow, red, brown",0,0,0,0
+7,Boletus regineus,7,13,3,4,white,subclavate,0,hymenophore,none,7,14,cap,brown,1,0,0,0
+8,Cantharellus californicus,2,9,0.5,3.5,yellow,clavate,0,decurrent,"milk, yellow",3,11,vase,yellow,0,0,0,0
+9,Chlorophyllum brunneum,6,16,2,3,white,annulus,0,free,white,7,20,cap,brown,0,1,0,1
+10,Clavaria fragilis,3,9,2,4,"white, yellow",equal,0,sporocarp,none,0,0,none,none,0,0,0,0
+11,Clitocybe nuda,3,6.5,1,2.5,"white, purple",equal,1,subdecurrent,"buff, brown, lilac, purple",4,14,cap,"buff, lilac, purple",1,0,0,0
+12,Coprinellus micaceus,1.5,5,0.2,0.5,white,equal,0,notched,"white, pink, black",2,5,campanulate,"yellow, brown",0,0,0,0
+13,Coprinus comatus,8,20,1,1.5,white,equal,0,adnexed,"white, pink, black",2.5,4.5,campanulate,"white, brown",0,1,0,0
+14,Entoloma medianox,5,11,1.5,3,"white, blue, grey",equal,0,notched,"white, pink, blue",5,13,cap,"blue, grey",0,0,0,0
+15,Flammulina velutipes,1.5,7,0.2,0.7,"milky, brown",equal,0,adnexed,"white, milk",1,3,cap,"yellow, buff, red, brown",1,0,0,0
+16,Gliophorus psittacinus,4,9,0.3,0.5,"yellow, pink, orange, green",equal,0,decurrent,"white, green",1.5,4,cap,"yellow, pink, orange, green",0,0,0,0
+17,Gomphidius oregonensis,5,11,1.5,4,"white, yellow",equal,0,decurrent,"milk, brown, grey",3,12,cap,"buff, pink, lilac, brown, grey",1,0,0,0
+18,Gymnopus dryophilus,2,6.5,3,6,"white, brown",equal,0,notched,"white, milk",2,5,cap,"white, red, brown",0,0,0,0
+19,Hericium erinaceus,5,6,0,0,"white, yellow, brown",spine,0,sporocarp,none,10,20,none,"white, yellow, brown",0,0,0,0
+20,Hydnum repandum,2,7,1,2.5,"milk, yellow, buff",equal,0,hymenophore,none,2,12,cap,"milk, buff, orange",0,1,0,1
+21,Laccaria amethysteo-occidentalis,2,12,0.3,1.2,"purple, brown, grey",subclavate,1,decurrent,purple,1,6.5,cap,purple,0,0,0,0
+22,Lacrymaria lacrymabunda,6,9,0.6,1,"white, brown",annulus,0,adnate,brown,2.6,3.2,campanulate,"buff, brown",0,0,0,0
+23,Lactarius deliciosus,3,6,1.5,2.5,"orange, green",equal,0,subdecurrent,"orange, green",5,13,cap,"orange, green",1,0,0,0
+24,Lactarius rubidus,2,5,0.4,1,"buff, orange",equal,0,subdecurrent,"pink, brown",1.5,4.5,cap,"buff, orange",0,0,0,0
+25,Lactarius rufulus,4,8,0.5,1.5,"red, brown",equal,0,subdecurrent,"pink, yellow, red, brown",3,10,vase,"orange, red, brown",0,0,0,0
+26,Laetiporus gilbertsonii,0,0,0,0,none,none,0,sporocarp,"yellow, orange, red",7,55,shelf,"yellow, orange, red",0,0,0,0
+27,Leccinum manzanitae,9,17,2,4,"white, blue",clavate,1,hymenophore,"green, brown",5,18,cap,"red, brown",1,0,0,0
+28,Lentinula edodes,4,5,5,7,white,equal,0,adnate,brown,6,15,cap,brown,0,0,0,0
+29,Panaeolus papilionaceus,6,12,0.2,0.4,"brown, grey",equal,0,adnexed,grey,1.5,4,campanulate,"green, brown, grey",1,0,0,0
+30,Pleurotus ostreatus,0.5,3,0.5,2,white,thick,0,decurrent,"white, yellow",5,25,fan,white,0,0,0,0
+31,Pluteus cervinus,5,12,0.7,1.7,white,equal,0,free,"white, pink",5,13,cap,"brown, grey",0,0,0,0
+32,Suillus fuscotomentosus,4,7,2,3.5,"milk, yellow, buff",equal,0,hymenophore,none,4,15,cap,"brown, grey",1,0,0,0
+33,Suillus pungens,3,8,1.5,2,"white, yellow",thick,0,hymenophore,white,5,13,cap,"yellow, red, brown",0,0,0,0
+34,Volvopluteus gloiocephalus,9,18,1.5,2,"white, grey",equal,0,free,"white, salmon",6,14,campanulate,"white, brown, grey",1,0,0,0
+35,Agaricus augustus group,10,37,3,6,"yellow, brown",equal,1,close,"milk, brown, black",6,32,cap,"yellow, brown",0,1,0,1
+36,Agaricus subrutilescens group,6,16,1,2,"white, brown",annulus,1,free,"pink, brown",6,14,cap,"purple, brown, green",0,1,0,1
+37,Amanita novinupta group,6,12,1.5,3.5,white,annulus,1,adnexed,"white, milk",5,14,cap,pink,0,0,1,1
+38,Boletus edulis var. grandedulis,7,20,3,8,"white, brown",equal,0,hymenophore,none,7,25,cap,"buff, yellow, red, brown",0,0,0,0
+39,Clavaria fragilis group,3,9,2,4,"white, yellow",equal,0,sporocarp,none,0,0,none,none,0,0,0,0
+40,Coprinellus micaceus group,1.5,5,0.2,0.5,white,equal,0,notched,"white, pink, black",2,5,campanulate,"yellow, brown",0,0,0,0
+41,Flammulina velutipes group,1.5,7,0.2,0.7,"milky, brown",equal,0,adnexed,"white, milk",1,3,cap,"yellow, buff, red, brown",1,0,0,0
+42,Flammulina velutipes var. lupinicola,1.5,7,0.2,0.7,"milky, brown",equal,0,adnexed,"white, milk",1,3,cap,"yellow, buff, red, brown",1,0,0,0
+43,Flammulina velutipes var. velutipes,1.5,7,0.2,0.7,"milky, brown",equal,0,adnexed,"white, milk",1,3,cap,"yellow, buff, red, brown",1,0,0,0
+44,Gliophorus psittacinus group,4,9,0.3,0.5,"yellow, pink, orange, green",equal,0,decurrent,"white, green",1.5,4,cap,"yellow, pink, orange, green",0,0,0,0
+45,Gliophorus psittacinus var. californicus,4,9,0.3,0.5,"yellow, pink, orange, green",equal,0,decurrent,"white, green",1.5,4,cap,"yellow, pink, orange, green",0,0,0,0
+46,Lactarius deliciosus group,3,6,1.5,2.5,"orange, green",equal,0,subdecurrent,"orange, green",5,13,cap,"orange, green",1,0,0,0
+47,Lepista nuda,3,6.5,1,2.5,"white, purple",equal,1,subdecurrent,"buff, brown, lilac, purple",4,14,cap,"buff, lilac, purple",1,0,0,0
+48,Panaeolus papilionaceus group,6,12,0.2,0.4,"brown, grey",equal,0,adnexed,grey,1.5,4,campanulate,"green, brown, grey",1,0,0,0
+49,Pleurotus ostreatus group,0.5,3,0.5,2,white,thick,0,decurrent,"white, yellow",5,25,fan,white,0,0,0,0
+50,Pluteus cervinus group,5,12,0.7,1.7,white,equal,0,free,"white, pink",5,13,cap,"brown, grey",0,0,0,0
+51,Amanita vaginata,6,13,1.2,2,grey,equal,0,free,"white, grey",5.5,10,cap,"brown, grey",1,0,0,0
+52,Amanita velosa,4,11,1,2.5,white,equal,1,free,"white, pink",5,11,cap,"pink, orange, buff, brown",0,0,0,0
+53,Armillaria mellea,10,20,2.5,3.5,"white, yellow, brown",,1,decurrent,"white, pink",3,15,cap,brown,1,0,0,0
+54,Amanita vaginata group,6,13,1.2,2,grey,equal,0,free,"white, grey",5.5,10,cap,"brown, grey",1,0,0,0
+55,Entoloma medianox f. eos,5,11,1.5,3,"white, blue, grey",equal,0,notched,"white, pink, blue",5,13,cap,"blue, grey",0,0,0,0
+56,Laetiporus gilbertsonii group,0,0,0,0,none,none,0,sporocarp,"yellow, orange, red",7,55,shelf,"yellow, orange, red",0,0,0,0
+53,Armillaria mellea group,10,20,2.5,3.5,"white, yellow, brown",,1,decurrent,"white, pink",3,15,cap,brown,1,0,0,0
