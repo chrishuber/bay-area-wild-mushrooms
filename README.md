@@ -6,7 +6,7 @@
 
 <hr/>
 
-### <span style="color:#AAA">Problem Statement and Goal</span>
+### <span style="color:#AAA">Project Goal</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p>Given prior records of findings of edible wild edible mushroom species with latitude/longitude coordinates, species names, dates of sightings, weather conditions, and forest compositions can I predict for a given time period and location which species of edible mushroom an instance is likely to be among those that grow natively in the Bay Area?</p>
 </div>
@@ -24,7 +24,7 @@
 ### <span style="color:#AAA">Data Sources</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p>
-My main data source for the project is a MySQL database dump from Mushroom Observer, a user-submitted mushroom documenting website. I filtered those records into Bay Area relevant tables using SQL and wrote queries to extract the data sets I was looking for based on custom criteria. I also sourced weather data for the submitted periods (May 2006 - September 2018) from the NOAA weather website using Selenium. 
+My main data source for the project is a MySQL database dump from <a href="https://mushroomobserver.org">Mushroom Observer</a>, a user-submitted mushroom documenting website. I filtered those records into Bay Area relevant tables using SQL and wrote queries to extract the data sets I was looking for based on custom criteria. I also sourced weather data for the submitted periods (May 2006 - September 2018) from the NOAA weather website using Selenium. I manually created another table for species-related scientific specifications.
 </p>
 
 <p>
