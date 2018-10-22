@@ -43,7 +43,7 @@ I did a lot of manual looking up of the properties of the mushrooms listed (e.g.
 <hr/>
 
 <p>
-In terms of feature engineering, I created a grid composed of squares 1/2 mile square cells over the observed region and assigned a code to each cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
+In terms of feature engineering, I created a grid composed of 1/2 mile square cells over the observed region and assigned a code to each cell to break down the geolocation of each mushroom without using cross-correlated latitude/longitude data. I found a column in my dataset with descriptive wording and also mined that to indicate the presence of forests (Redwood, Coastal Oak, Douglass Fir) as well as other environmental factors (grass, wood chip, duff) that are required or very beneficial for certain mushroom species to grow.
 </p>
 
 <p align="center">
@@ -80,14 +80,14 @@ In terms of feature engineering, I created a grid composed of squares 1/2 mile s
 ### <span style="color:#AAA">Statistical Analysis</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p><b>Model Selection</b><br/>
-To select the best algorithms, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing model was simple Logistic Regression. Ironically, PCA which I was hoping would reduce noise across hundreds of features actually returned worse results. I attribute this to the fact that many of these columns were dummied which PCA tends to have little effect on. As I add more features to the model, PCA might again become a useful component but not with the current parameters I have to work with.
+To select the best algorithms, I built pipelines to evaluate a number of different models both with and without Standard Scalar and PCA (Principal Component Analysis). The scores I was getting revealed that the best performing model was simple Logistic Regression. Ironically, PCA which I was hoping would reduce noise across hundreds of features actually returned worse results. I attribute this to the fact that many of these columns were dummied which PCA tends to have little effect on.
 </p>
 
 <p align="center">
 <img src="./images/pipeline.png">
 </p>
 
-<p>I then took my top performing models and using the best_estimator_ property of the Pipeline object as a guideline, broke out individual models to test and adjust the hyperparameters on individually since doing an exhaustive analysis of large numbers of parameters with a pipeline is prohibitive both in time and CPU capacity. Doing so resulted in me achieving slightly higher scores for some of my models.</p>
+<p>I then took my top performing models and using the best_estimator_ property of the Pipeline object as a guideline, broke out individual models to test and adjust the hyperparameters on individually since doing an exhaustive analysis of large numbers of parameters with a pipeline is prohibitive both in time and CPU capacity.</p>
 
 <p align="center">
 <img src="./images/logreg_after_cm.png">
@@ -102,13 +102,13 @@ Based on the results I was getting, it became clear that predicting a mushroom's
 
 <hr/>
 
-<p>I am anxious to add a broader set of factors in order to analyze my accuracy and false negative rate not only across a broader set of mushrooms, but also informing and/or warning about potentually poisionous or psychoactive mushrooms. Furthermore, while the current dataset that I have makes methodological prediction of mushroom blooms no better than a guess, the more data that can be sourced the higher the accuracy rate can go so it is not out of the realm of possibility. This project only examines just over 2,400 records (edible only) out of over 20,000 recorded in the Bay Area, so I have more work I can do in the short-term without any additional resources short of further metric gathering and building out of the database.
+<p>I am anxious to add a broader set of factors in order to analyze my accuracy and false negative rate not only across a broader set of mushrooms, but also informing and/or warning about potentually poisionous or psychoactive mushrooms. Furthermore, while the current dataset that I have makes methodological prediction of mushroom blooms no better than a guess, the more data that can be sourced the higher the accuracy rate can go so it is not out of the realm of possibility. This project examines just over 2,400 records (edible only) out of over 20,000 recorded in the Bay Area, so I have more work I can do in the short-term without any additional resources short of further metric gathering and building out of the database.
 </p>
 
 <hr/>
 
 <p><b>Inference</b><br/>
-This project serves as a solid proof of concept for mushroom identification, even using imputed data. While mushrooms are extremely difficult to identify just using geolocation or weather factors, they can also be difficult to identify based on shape, color and size and are easily misclassified by an inexperienced observer. However by combining all of these factors including easily observable metrics, predictions can be made with striking accuracy.
+This project serves as a solid proof of concept for data-science driven mushroom identification, even using imputed data. While mushrooms are extremely difficult to identify just using geolocation or weather factors, they can also be difficult to identify based on shape, color and size and are easily misclassified by an inexperienced observer. However by combining all of these factors including easily observable metrics, predictions can be made with striking accuracy.
 </p>
 </div>
 
