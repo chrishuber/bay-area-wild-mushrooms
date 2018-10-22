@@ -50,7 +50,7 @@ In terms of feature engineering, I created a grid composed of 1/2 mile square ce
 	<img src="./images/mushroom_date_bar.png">
 </p>
 
-### <span style="color:#AAA">Methods and Models</span>
+### <span style="color:#AAA">Methods and Implementation</span>
 <div style="margin-left: 30px; margin-right: 30px;">
 <p>I used MySQL as a database backend and Python/Pandas as the main technologies to analyze and deliver my findings. For visualizations, I used Matplotlib and Seaborn for charting and Tableau and MPLLeaflet for mapping.</p>
  
