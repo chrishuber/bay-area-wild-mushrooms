@@ -1,4 +1,4 @@
-## <span style="color:#AAA">Technical Report</span>
+## <span style="color:#AAA">Technical Report - Capstone Project</span>
 <p>
 <span style="color:#CCC;"><b>A predictive classification study of edible wild mushrooms in the greater San Francisco Bay Area</b></span><br/>
 <span style="color:#BBB">Chris Huber, chrishubersf@gmail.com</span>
@@ -16,7 +16,7 @@
 	<li>Python 3.x</li>
 	<li>Jupyter Notebook</li>
 	<li><a href="https://dev.mysql.com">MySQL</a> (including Python connector)</li>
-	<li><a href="https://www.seleniumhq.org">Selenium</a></li>
+	<li><a href="https://www.seleniumhq.org">Selenium</a> (including GeckoDriver)</li>
 	<li>mplleaflet</li>
 </ul>
 <p>MySQL can be installed using <a href="https://brew.sh">Homebrew</a> or via the MySQL website. Most other packages can be installed using 'pip install {package name}'.</p>
